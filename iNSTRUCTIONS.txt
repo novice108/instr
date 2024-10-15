@@ -1,0 +1,39 @@
+ctrl+alt+t  Launch Terminal
+
+# Terminal 1 Start Betaflight SITL
+cd /home/a/Downloads/riy/resources
+su
+./betaflight_SITL.elf
+
+#start betaflight-configurator
+Choose 'Manual Selection'
+Enter tcp://localhost:5761 for the Port
+and click Connect
+
+# Terminal 2
+cd /home/a/Downloads/riy
+python3 entry.py
+
+# Terminal 3
+cd /home/a/Downloads/riy
+sudo bash gazebo.sh
+
+# Terminal alternate
+source /usr/share/gazebo/setup.sh
+gazebo --verbose resources/swarm.world
+
+WIRESHARK
+tcp.port == 5761
+
+sudo apt install python3-pip
+
+pip install json5
+
+pip install pyjoystick
+
+sudo cp libArduCopterPlugin.so /usr/lib/x86_64-linux-gnu/gazebo-11/plugins
+
+find /opt/ros/humble/lib -name "libgazebo_ros_camera.so"
+
+pip install opencv-python "numpy<2" rclpy sensor_msgs cv_bridge
+
